@@ -1,7 +1,11 @@
-import './App.css';
+import Header from './components/Header/Header';
 
-function App() {
-  return console.log('hello');
-}
+const App = () => {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+};
 
 export default App;
