@@ -1,0 +1,30 @@
+.header {
+  padding: 24px 64px;
+  background-color: var(--input-bgc);
+  display: flex;
+  align-items: center;
+  gap: 450px;
+}
+
+.valuesIcons {
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.active {
+  color: var(--btn-color-focus);
+}
