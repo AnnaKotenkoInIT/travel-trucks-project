@@ -1,0 +1,143 @@
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  transition: border-color var(--cubic);
+}
+
+.card:hover,
+.card:focus {
+  border-color: var(--btn-color-focus);
+}
+
+.mainImage {
+  width: 292px;
+  height: 320px;
+  border-radius: 10px;
+  background: lightgray -57.393px -4.801px / 195.679% 103.001% no-repeat;
+  background-size: cover;
+}
+
+.mainData {
+  width: 100%;
+}
+
+.info {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.camperName {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.priceAndFav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.favBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.favIcon {
+  fill: var(--main-color);
+  transition: fill var(--cubic);
+}
+
+.favIcon:focus,
+.favIcon:hover {
+  fill: var(--btn-color-focus);
+}
+
+.isActive {
+  fill: var(--btn-color-focus);
+}
+
+.data {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.data li {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.dataText {
+  font-size: 16px;
+}
+
+.starIcon {
+  fill: var(--rating-color);
+}
+
+.mapIcon {
+  fill: var(--main-color);
+}
+
+.description {
+  margin-bottom: 24px;
+
+  display: -webkit-box;
+  width: 525px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+  color: var(--general-text-color);
+  text-overflow: ellipsis;
+
+  font-size: 16px;
+}
+
+.badges {
+  margin-bottom: 24px;
+}
+
+.moreBtn {
+  width: 166px;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  color: var(--text-color-white);
+
+  background-color: var(--btn-color);
+  border-radius: 200px;
+  border: 1px solid transparent;
+  transition: background-color var(--cubic);
+}
+
+.moreBtn:hover,
+.moreBtn:focus {
+  background-color: var(--btn-color-focus);
+  cursor: pointer;
+}

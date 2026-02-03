@@ -1,0 +1,25 @@
+.badgeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badgeItem {
+  display: flex;
+  padding: 12px 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: var(--badges-bgc);
+}
+
+.icon {
+  fill: var(--main-color);
+}
+
+.badgeItem span {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -1,0 +1,6 @@
+.catalogContainer {
+  display: flex;
+  padding: 48px 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+}

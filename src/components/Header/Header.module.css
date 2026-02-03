@@ -1,6 +1,11 @@
 .header {
-  padding: 24px 64px;
   background-color: var(--input-bgc);
+}
+
+.headerContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 64px;
   display: flex;
   align-items: center;
   gap: 450px;
@@ -14,15 +19,22 @@
 
 .navList {
   display: flex;
-  gap: 32px;
+  column-gap: 32px;
+}
+
+.listItem {
 }
 
 .link {
-  padding-top: 24px;
-  padding-bottom: 24px;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  transition: color var(--cubic);
+}
+
+.link:focus,
+.link:hover {
+  color: var(--btn-color-focus);
 }
 
 .active {

@@ -1,3 +1,9 @@
+.homeContainer {
+  padding: 48px 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .home {
   padding: 260px 64px;
   background:

@@ -1,0 +1,9 @@
+.catalogListContainer {
+  display: flex;
+  flex-direction: column;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

@@ -36,7 +36,11 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.items = action.payload.items.map(c => ({ ...c, isFavourite: false }));
+
+        state.items = action.payload.items.map(c => ({
+          ...c,
+          isFavourite: false,
+        }));
       })
       .addCase(fetchCampers.rejected, handleRejected)
 
