@@ -4,8 +4,6 @@ import { chooseLocation, chooseForm, chooseEngine, chooseTransmission, clearFilt
 
 import { selectLocation, selectForm, selectEngine, selectTransmission } from '../../redux/filters/selectors';
 
-import { fetchCampers } from '../../redux/campers/operations';
-
 import Button from '../Button/Button';
 
 import css from './Filters.module.css';
@@ -69,17 +67,7 @@ const Filters = () => {
   const transmission = useSelector(selectTransmission);
 
   const handleSearch = () => {
-    dispatch(
-      fetchCampers({
-        page: 1,
-        filters: {
-          location,
-          form,
-          engine,
-          transmission,
-        },
-      })
-    );
+    return;
   };
 
   const handleClear = () => {

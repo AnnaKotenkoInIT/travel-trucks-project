@@ -37,7 +37,9 @@ const campersSlice = createSlice({
         state.loading = false;
         state.error = null;
 
-        state.items = action.payload.items.map(c => ({
+        const campers = Array.isArray(action.payload) ? action.payload : action.payload.items;
+
+        state.items = campers.map(c => ({
           ...c,
           isFavourite: false,
         }));

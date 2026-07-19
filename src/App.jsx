@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Header from './components/Header/Header';
 import Loader from './components/Loader/Loader';
-import NotFound from './pages/NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Catalog = lazy(() => import('./pages/Catalog/Catalog'));

@@ -62,12 +62,10 @@
   margin-bottom: 24px;
 }
 
-/* збільшений відступ після Location */
 .locationSection {
   margin-bottom: 40px;
 }
 
-/* збільшений відступ перед кнопками */
 .transmissionSection {
   margin-bottom: 40px;
 }
@@ -156,5 +154,5 @@
 
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 1.5px;
 }

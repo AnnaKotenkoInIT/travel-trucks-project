@@ -1,8 +1,8 @@
 import css from './Loader.module.css';
 
 const Loader = ({
-  message = 'Loading...',
-  subMessage = 'Please wait a moment while we prepare the data.',
+  message = 'Loading tracks...',
+  subMessage = 'Please wait while we fetch the best travel trucks for you',
   fullScreen = true,
 }) => {
   const loaderContent = (
