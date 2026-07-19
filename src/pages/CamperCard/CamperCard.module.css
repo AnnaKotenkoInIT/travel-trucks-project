@@ -13,6 +13,7 @@
 
 .gallerySection {
   width: 638px;
+  flex: 1;
 }
 
 .mainImage {
@@ -34,6 +35,19 @@
   object-fit: cover;
   border-radius: 16px;
   cursor: pointer;
+
+  border: 2px solid transparent;
+  transition:
+    border-color 250ms ease,
+    opacity 250ms ease;
+}
+
+.galleryImage:hover {
+  opacity: 0.8;
+}
+
+.activeImage {
+  border: 3px solid var(--btn-color);
 }
 
 .info {
@@ -93,8 +107,6 @@
 }
 
 .description {
-  margin-bottom: 24px;
-
   font-size: 16px;
   line-height: 1.5;
   color: var(--grey-text);

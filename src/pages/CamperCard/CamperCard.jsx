@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -18,11 +18,17 @@ const CamperCard = () => {
   const dispatch = useDispatch();
   const camper = useSelector(selectCurrentCamper);
 
+  const [activeImage, setActiveImage] = useState(null);
+
   useEffect(() => {
-    dispatch(fetchCamper(id));
+    if (id) {
+      dispatch(fetchCamper(id));
+    }
   }, [dispatch, id]);
 
   if (!camper) return null;
+
+  const mainImage = activeImage || camper.gallery[0]?.original;
 
   const price = `€${camper.price.toFixed(2).replace('.', ',')}`;
 
@@ -30,11 +36,17 @@ const CamperCard = () => {
     <section className={css.container}>
       <div className={css.topSection}>
         <div className={css.gallerySection}>
-          <img src={camper.gallery[0].original} alt={camper.name} className={css.mainImage} />
+          <img src={mainImage} alt={camper.name} className={css.mainImage} />
 
           <div className={css.gallery}>
-            {camper.gallery.map((image, index) => (
-              <img key={index} src={image.thumb} alt={camper.name} className={css.galleryImage} />
+            {camper.gallery.map(image => (
+              <img
+                key={image.thumb}
+                src={image.thumb}
+                alt={camper.name}
+                className={`${css.galleryImage} ${mainImage === image.original ? css.activeImage : ''}`}
+                onClick={() => setActiveImage(image.original)}
+              />
             ))}
           </div>
         </div>
@@ -55,6 +67,7 @@ const CamperCard = () => {
                 <svg className={css.mapIcon} width="16" height="16">
                   <use href={`${icons}#icon-map`} />
                 </svg>
+
                 {camper.location}
               </span>
             </div>
@@ -73,6 +86,7 @@ const CamperCard = () => {
 
         <div className={css.bottomContent}>
           <CamperReviews camper={camper} />
+
           <BookingForm camperId={camper.id} />
         </div>
       </div>
