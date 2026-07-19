@@ -15,8 +15,6 @@ const Catalog = () => {
 
   const campers = useSelector(selectAllCampers);
 
-  console.log('campers', campers);
-
   return (
     <div className={css.catalogContainer}>
       <Filters />

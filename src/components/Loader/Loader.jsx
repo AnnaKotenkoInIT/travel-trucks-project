@@ -1,18 +1,25 @@
-import { Circles } from 'react-loader-spinner';
-import s from './Loader.module.css';
+import css from './Loader.module.css';
 
-const Loader = () => (
-  <div className={s.load}>
-    <Circles
-      height="80"
-      width="80"
-      color="#D84343"
-      ariaLabel="circles-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
-      visible={true}
-    />
-  </div>
-);
+const Loader = ({
+  message = 'Loading...',
+  subMessage = 'Please wait a moment while we prepare the data.',
+  fullScreen = true,
+}) => {
+  const loaderContent = (
+    <div className={css.loaderCard} role="status" aria-live="polite">
+      <div className={css.loaderSpinner}></div>
+
+      <h3 className={css.loaderTitle}>{message}</h3>
+
+      {subMessage && <p className={css.loaderText}>{subMessage}</p>}
+    </div>
+  );
+
+  return fullScreen ? (
+    <div className={css.backdrop}>{loaderContent}</div>
+  ) : (
+    <div className={css.wrapper}>{loaderContent}</div>
+  );
+};
 
 export default Loader;

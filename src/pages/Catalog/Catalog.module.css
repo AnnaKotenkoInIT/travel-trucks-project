@@ -1,5 +1,7 @@
 .catalogContainer {
   display: flex;
+  align-items: flex-start;
+  gap: 65px;
   padding: 48px 64px;
   max-width: 1440px;
   margin: 0 auto;

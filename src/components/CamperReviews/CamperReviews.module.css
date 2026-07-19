@@ -1,0 +1,37 @@
+.reviewsList {
+  display: flex;
+  width: 631px;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.reviewData {
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.avatarContainer {
+}
+
+.avatar {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border-color: var(--badges-bgc);
+}
+
+.nameAndRaiting {
+}
+.name {
+}
+.stars {
+}
+.starYellow {
+}
+.starGrey {
+}
+.reviewText {
+}

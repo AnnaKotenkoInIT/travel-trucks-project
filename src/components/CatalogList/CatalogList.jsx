@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import CatalogListItem from '../CatalogListItem/CatalogListItem';
 import css from './CatalogList.module.css';
 
@@ -13,9 +14,8 @@ const CatalogList = ({ campers }) => {
           </li>
         ))}
       </ul>
-      <button type="button" className={css.loadBtn}>
-        Load more
-      </button>
+
+      <Button className={css.loadBtn}>Load more</Button>
     </div>
   );
 };

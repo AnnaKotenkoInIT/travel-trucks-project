@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   location: '',
-  equipment: [],
-  type: null,
+  form: '',
+  engine: '',
+  transmission: '',
 };
 
 const filtersSlice = createSlice({
@@ -13,20 +14,25 @@ const filtersSlice = createSlice({
     chooseLocation(state, action) {
       state.location = action.payload;
     },
-    chooseEquipment: (state, action) => {
-      if (state.equipment.includes(action.payload)) {
-        state.equipment = state.equipment.filter(i => i !== action.payload);
-      } else {
-        state.equipment.push(action.payload);
-      }
+
+    chooseForm(state, action) {
+      state.form = action.payload;
     },
-    chooseType(state, action) {
-      if (state.type !== action.payload) {
-        state.type = action.payload;
-      } else state.type = null;
+
+    chooseEngine(state, action) {
+      state.engine = action.payload;
+    },
+
+    chooseTransmission(state, action) {
+      state.transmission = action.payload;
+    },
+
+    clearFilters() {
+      return initialState;
     },
   },
 });
 
-export const { chooseLocation, chooseEquipment, chooseType } = filtersSlice.actions;
+export const { chooseLocation, chooseForm, chooseEngine, chooseTransmission, clearFilters } = filtersSlice.actions;
+
 export const filtersReducer = filtersSlice.reducer;

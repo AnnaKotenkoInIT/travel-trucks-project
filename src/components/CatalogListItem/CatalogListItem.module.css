@@ -1,12 +1,14 @@
 .card {
+  width: 888px;
   padding: 24px;
+
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 24px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  transition: border-color var(--cubic);
+
+  border-radius: 16px;
+  background-color: var(--input-bgc);
 }
 
 .card:hover,
@@ -15,87 +17,69 @@
 }
 
 .imageContainer {
-  width: 292px;
-  height: 320px;
+  width: 219px;
+  height: 240px;
   flex-shrink: 0;
 }
 
 .mainImage {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  background: lightgray -57.393px -4.801px / 195.679% 103.001% no-repeat;
+
+  border-radius: 16px;
+
+  background: lightgray -57.393px -4.801px / 195.679% 103% no-repeat;
   background-size: cover;
 }
 
 .mainData {
-  width: 100%;
+  display: flex;
+
+  width: 524px;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 24px;
+
+  flex-shrink: 0;
 }
 
 .info {
-  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
 }
 
-.camperName {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.33;
-}
-
-.priceAndFav {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
+.camperName,
 .price {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
 }
 
-.favBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.favIcon {
-  fill: var(--main-color);
-  transition: fill var(--cubic);
-}
-
-.favIcon:focus,
-.favIcon:hover {
-  fill: var(--btn-color-focus);
-}
-
-.isActive {
-  fill: var(--btn-color-focus);
-}
-
 .data {
-  margin-bottom: 24px;
   display: flex;
   gap: 16px;
-}
-
-.data li {
-  display: flex;
-  align-items: center;
-
-  gap: 4px;
+  padding: 0;
+  list-style: none;
 }
 
 .dataText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 16px;
+}
+
+.starIcon,
+.mapIcon {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
 }
 
 .starIcon {
@@ -107,38 +91,56 @@
 }
 
 .description {
-  margin-bottom: 24px;
-
   display: -webkit-box;
   width: 525px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-
   overflow: hidden;
   color: var(--general-text-color);
   text-overflow: ellipsis;
-
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .badges {
-  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: var(--badges-bgc);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.badgeIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: var(--main-color);
 }
 
 .moreBtn {
-  width: 166px;
+  width: 173px;
   padding: 16px 40px;
+  display: flex;
   justify-content: center;
   align-items: center;
-
+  border: 1px solid transparent;
+  border-radius: 200px;
+  background-color: var(--btn-color);
+  color: var(--text-color-white);
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.08px;
-  color: var(--text-color-white);
-
-  background-color: var(--btn-color);
-  border-radius: 200px;
-  border: 1px solid transparent;
   transition: background-color var(--cubic);
 }
 

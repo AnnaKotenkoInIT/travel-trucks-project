@@ -1,0 +1,128 @@
+.cardContainer {
+  padding: 48px 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.descriptionPart {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.camperName {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.data {
+  margin-bottom: 16px;
+  display: flex;
+  column-gap: 16px;
+}
+
+.data li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dataText {
+  font-size: 16px;
+}
+
+.starIcon {
+  fill: var(--rating-color);
+}
+
+.mapIcon {
+  fill: var(--main-color);
+}
+
+.price {
+  margin-bottom: 28px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.imgFolder {
+  margin-bottom: 28px;
+  display: flex;
+  width: 1312px;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.camperImg {
+  width: 292px;
+  height: 312px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.description {
+  color: var(--general-text-color);
+  font-size: 16px;
+}
+
+.camperTabs {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.camperTabs {
+  position: relative;
+  margin-bottom: 68px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.camperTabs::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+  width: 1440px;
+  height: 2px;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.tabButton {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: calc(-24px - 1.5px);
+  width: 100%;
+  height: 5px;
+  background-color: var(--btn-color);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.tabsAndBoobContainer {
+  display: flex;
+  gap: 40px;
+}
