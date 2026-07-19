@@ -22,7 +22,7 @@ const CamperReviews = ({ camper }) => {
             <div className={css.avatarContainer}>
               <div className={css.avatar}>{review.reviewer_name.charAt(0).toUpperCase()}</div>
             </div>
-            <div className={css.nameAndRaiting}>
+            <div className={css.nameAndRating}>
               <p className={css.name}>{review.reviewer_name}</p>
               <div className={css.stars}>{fetchStars(review.reviewer_rating)}</div>
             </div>

@@ -1,35 +1,79 @@
-.cardContainer {
-  padding: 48px 64px;
-  max-width: 1440px;
+.container {
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 48px 64px;
 }
 
-.descriptionPart {
-  margin-bottom: 60px;
-  width: 100%;
+.topSection {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 88px;
 }
 
-.camperName {
+.gallerySection {
+  width: 638px;
+}
+
+.mainImage {
+  width: 638px;
+  height: 505px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 27px;
+}
+
+.gallery {
+  display: flex;
+  gap: 32px;
+}
+
+.galleryImage {
+  width: 135px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainInfo {
+  display: flex;
+  padding: 24px;
+  margin-bottom: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 16px;
+  background-color: var(--input-bgc);
+}
+
+.titleName {
   margin-bottom: 8px;
+
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
 }
 
-.data {
-  margin-bottom: 16px;
+.meta {
   display: flex;
-  column-gap: 16px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.data li {
+.meta span {
   display: flex;
   align-items: center;
   gap: 4px;
-}
 
-.dataText {
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .starIcon {
@@ -41,88 +85,35 @@
 }
 
 .price {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
 }
 
-.imgFolder {
-  margin-bottom: 28px;
-  display: flex;
-  width: 1312px;
-  gap: 48px;
-  align-items: flex-start;
-}
-
-.camperImg {
-  width: 292px;
-  height: 312px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: lightgray 50% / cover no-repeat;
-}
-
 .description {
-  color: var(--general-text-color);
+  margin-bottom: 24px;
+
   font-size: 16px;
+  line-height: 1.5;
+  color: var(--grey-text);
 }
 
-.camperTabs {
-  position: relative;
+.bottomSection {
+  margin-top: 44px;
+}
+
+.sectionTitle {
+  margin-bottom: 48px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.bottomContent {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
-}
-
-.camperTabs {
-  position: relative;
-  margin-bottom: 68px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.camperTabs::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -24px;
-  width: 1440px;
-  height: 2px;
-  background-color: var(--border-color);
-  border-radius: 2px;
-  z-index: 1;
-}
-
-.tabButton {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.activeTab::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: calc(-24px - 1.5px);
-  width: 100%;
-  height: 5px;
-  background-color: var(--btn-color);
-  border-radius: 2px;
-  z-index: 2;
-}
-
-.tabsAndBoobContainer {
-  display: flex;
   gap: 40px;
 }

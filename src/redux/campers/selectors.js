@@ -9,7 +9,7 @@ export const selectError = state => state.campers.error;
 export const selectFilteredCampers = state => {
   const campers = state.campers.items;
 
-  const { location, form, engine, transmission } = state.filters;
+  const { location, form, engine, transmission } = state.filters.applied;
 
   return campers.filter(camper => {
     const matchLocation = location ? camper.location?.toLowerCase().includes(location.toLowerCase()) : true;

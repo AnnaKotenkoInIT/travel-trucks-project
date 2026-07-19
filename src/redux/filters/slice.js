@@ -1,38 +1,65 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  location: '',
-  form: '',
-  engine: '',
-  transmission: '',
+  draft: {
+    location: '',
+    form: '',
+    engine: '',
+    transmission: '',
+  },
+
+  applied: {
+    location: '',
+    form: '',
+    engine: '',
+    transmission: '',
+  },
 };
 
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
+
   reducers: {
     chooseLocation(state, action) {
-      state.location = action.payload;
+      state.draft.location = action.payload;
     },
 
     chooseForm(state, action) {
-      state.form = action.payload;
+      state.draft.form = action.payload;
     },
 
     chooseEngine(state, action) {
-      state.engine = action.payload;
+      state.draft.engine = action.payload;
     },
 
     chooseTransmission(state, action) {
-      state.transmission = action.payload;
+      state.draft.transmission = action.payload;
     },
 
-    clearFilters() {
-      return initialState;
+    applyFilters(state) {
+      state.applied = { ...state.draft };
+    },
+
+    clearFilters(state) {
+      state.draft = {
+        location: '',
+        form: '',
+        engine: '',
+        transmission: '',
+      };
+
+      state.applied = {
+        location: '',
+        form: '',
+        engine: '',
+        transmission: '',
+      };
     },
   },
 });
 
-export const { chooseLocation, chooseForm, chooseEngine, chooseTransmission, clearFilters } = filtersSlice.actions;
+export const { chooseLocation, chooseForm, chooseEngine, chooseTransmission, applyFilters, clearFilters } =
+  filtersSlice.actions;
 
 export const filtersReducer = filtersSlice.reducer;

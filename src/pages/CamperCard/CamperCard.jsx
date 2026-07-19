@@ -1,19 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import { fetchCamper } from '../../redux/campers/operations';
 import { selectCurrentCamper } from '../../redux/campers/selectors';
-import { useParams } from 'react-router-dom';
-import BookingForm from '../../components/BookingForm/BookingForm';
-// import CamperFeatures from '../../components/CamperFeatures/CamperFeatures';
+
+import CamperFeatures from '../../components/CamperFeatures/CamperFeatures';
 import CamperReviews from '../../components/CamperReviews/CamperReviews';
+import BookingForm from '../../components/BookingForm/BookingForm';
+
 import icons from '../../images/icons.svg';
 import css from './CamperCard.module.css';
 
 const CamperCard = () => {
   const { id } = useParams();
+
   const dispatch = useDispatch();
   const camper = useSelector(selectCurrentCamper);
-  const [activeTab, setActiveTab] = useState('features');
 
   useEffect(() => {
     dispatch(fetchCamper(id));
@@ -24,54 +27,56 @@ const CamperCard = () => {
   const price = `€${camper.price.toFixed(2).replace('.', ',')}`;
 
   return (
-    <div className={css.cardContainer}>
-      <div className={css.descriptionPart}>
-        <h2 className={css.camperName}>{camper.name}</h2>
-        <ul className={css.data}>
-          <li className={css.dataText}>
-            <svg className={css.starIcon} width="16" height="16">
-              <use href={`${icons}#icon-star`} />
-            </svg>
-            {camper.rating} ({camper.reviews.length} Reviews)
-          </li>
-          <li className={css.dataText}>
-            <svg className={css.mapIcon} width="16" height="16">
-              <use href={`${icons}#icon-map`} />
-            </svg>
-            {camper.location}
-          </li>
-        </ul>
-        <p className={css.price}>{price}</p>
-        <div className={css.imgFolder}>
-          {camper.gallery.map((img, index) => (
-            <img key={index} src={img.original} alt={camper.name} className={css.camperImg} />
-          ))}
+    <section className={css.container}>
+      <div className={css.topSection}>
+        <div className={css.gallerySection}>
+          <img src={camper.gallery[0].original} alt={camper.name} className={css.mainImage} />
+
+          <div className={css.gallery}>
+            {camper.gallery.map((image, index) => (
+              <img key={index} src={image.thumb} alt={camper.name} className={css.galleryImage} />
+            ))}
+          </div>
         </div>
-        <p className={css.description}>{camper.description}</p>
+
+        <div className={css.info}>
+          <div className={css.mainInfo}>
+            <h2 className={css.titleName}>{camper.name}</h2>
+
+            <div className={css.meta}>
+              <span>
+                <svg className={css.starIcon} width="16" height="16">
+                  <use href={`${icons}#icon-star`} />
+                </svg>
+                {camper.rating} ({camper.reviews.length} Reviews)
+              </span>
+
+              <span>
+                <svg className={css.mapIcon} width="16" height="16">
+                  <use href={`${icons}#icon-map`} />
+                </svg>
+                {camper.location}
+              </span>
+            </div>
+
+            <p className={css.price}>{price}</p>
+
+            <p className={css.description}>{camper.description}</p>
+          </div>
+
+          <CamperFeatures camper={camper} />
+        </div>
       </div>
 
-      <div className={css.camperTabs}>
-        <button
-          className={`${css.tabButton} ${activeTab === 'features' ? css.activeTab : ''}`}
-          onClick={() => setActiveTab('features')}
-        >
-          Features
-        </button>
+      <div className={css.bottomSection}>
+        <h3 className={css.sectionTitle}>Reviews</h3>
 
-        <button
-          className={`${css.tabButton} ${activeTab === 'reviews' ? css.activeTab : ''}`}
-          onClick={() => setActiveTab('reviews')}
-        >
-          Reviews
-        </button>
+        <div className={css.bottomContent}>
+          <CamperReviews camper={camper} />
+          <BookingForm camperId={camper.id} />
+        </div>
       </div>
-
-      <div className={css.tabsAndBoobContainer}>
-        {activeTab === 'reviews' && <CamperReviews camper={camper} />}
-
-        <BookingForm camper={camper} />
-      </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { chooseLocation, chooseForm, chooseEngine, chooseTransmission, clearFilters } from '../../redux/filters/slice';
+import {
+  chooseLocation,
+  chooseForm,
+  chooseEngine,
+  chooseTransmission,
+  applyFilters,
+  clearFilters,
+} from '../../redux/filters/slice';
 
 import { selectLocation, selectForm, selectEngine, selectTransmission } from '../../redux/filters/selectors';
 
@@ -67,7 +74,7 @@ const Filters = () => {
   const transmission = useSelector(selectTransmission);
 
   const handleSearch = () => {
-    return;
+    dispatch(applyFilters());
   };
 
   const handleClear = () => {
